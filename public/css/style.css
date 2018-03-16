@@ -75,11 +75,11 @@ img{
 
 }
 .start .head .headImg img{
-	padding-left: .05rem;
-	padding-top: .05rem;
-	width: .7rem;
-	height: .7rem;
-	border-radius: .35rem;
+	padding-left: .045rem;
+	padding-top: .045rem;
+	width: .71rem;
+	height: .71rem;
+	border-radius: .355rem;
 }
 .start .head   span{
 	float: left;
@@ -151,7 +151,7 @@ img{
 	border-radius: .4rem;
 	text-align: center;
 	line-height: .4rem;
-	font-size: .16rem;
+	font-size: .32rem;
 	opacity: 0.7;
 	background-color: rgba(0,0,0,.5);
 }
