@@ -43,8 +43,12 @@ img{
 }
 .fl{float: left;}
 .fr{float: right;}
-
-
+.show {
+	display: block;
+}
+.hidden {
+	display: none;
+}
 .content{
 	position: relative;
 	width: 100%;
@@ -61,11 +65,11 @@ img{
 	height: 13.34rem;
 
 }
-.start .head{
-	padding: .4rem 0 0 .3rem;
+ .head{
+	padding: .4rem .3rem 0;
 	height: .8rem;
 }
-.start .head .headImg{
+ .head .headImg{
 	float: left;
 	background-image: url("../images/head.png");
 	background-size: .8rem .8rem;
@@ -74,7 +78,7 @@ img{
 	height: .8rem;
 
 }
-.start .head .headImg img{
+ .head .headImg img{
 	margin-left: .04rem;
 	margin-top: .04rem;
 	width: .72rem;
@@ -86,18 +90,19 @@ img{
 	padding-left: .3rem;
 	font-size: .32rem;
 	line-height: .8rem;
-
 }
 .start .head .ifeng img{
 	float: right;
+	display: inline-block;
 	width: 2.5rem;
+	margin-top: .14rem;
 }
 .start .head .ifeng span{
 	float: right;
-	padding-right: .4rem;
 	font-size: .28rem;
 	line-height: .8rem;
 	opacity: 0.7;
+	padding-left: .2rem;
 }
 .start .brandLoge{
 	position: absolute;
@@ -109,12 +114,12 @@ img{
 	width: 2.05rem;
 }
 .start .startBg img{
-	width:7.5rem ;
-	height:6.68rem;
+	width:100% ;
 	margin: .5rem auto 0;
 }
 .startCon{
-	margin-top: -.2rem;
+	margin : -.2rem auto 0;
+	text-align: center;
 }
 .startCon>span{
 	display: block;
@@ -154,4 +159,105 @@ img{
 	font-size: .16rem;
 	opacity: 0.7;
 	background-color: rgba(0,0,0,.5);
+}
+
+/*答题页*/
+.main .head .headTitle{
+	float: left;
+	padding-left: .3rem;
+	font-size: .32rem;
+}
+.main .head .headTitle div{
+	height: .26rem;
+	width: .7rem;
+	margin-top: .1rem;
+	background-color: #ffcc4f;
+	color: #6d4320;
+	line-height: .26rem ;
+	font-size: .09rem;
+	border-radius: .05rem;
+	text-align: center;
+}
+.main .question {
+	width: 88.7%;
+	height: 7rem;
+	background-color: white;
+	border-radius: .2rem;
+	margin: .88rem auto 0;
+	color:#333333;
+	padding: .3rem .26rem;
+	box-sizing: border-box;
+}
+.question .quesPage {
+	color: #999999;
+	float: left;
+}
+.question .quesPage span{
+	color: #a168b2;
+}
+.question .quesTime {
+	width: .88rem;
+	height: .88rem;
+	border-radius: .44rem;
+	background-color: #ffae46;
+	margin: 0 auto;
+	text-align: center;
+
+}
+.question .quesTime span {
+	display: inline-block;
+	background-color: white;
+	font-size: .40rem;
+	font-weight: bold;
+	color: #666666;
+	width: .76rem;
+	height: .76rem;
+	border-radius: .38rem;
+	line-height: .76rem;
+	margin-top: .06rem;
+}
+.question .quesCon {
+	margin-top: .5rem;
+	font-size: .30rem;
+}
+.question .quesCon ul {
+	margin-top: .4rem;
+}
+.question .quesCon ul li {
+	height: .9rem;
+	border: .04rem solid #e3e3e3;
+	border-radius: .9rem;
+	margin-bottom: .3rem;
+	line-height: .9rem;
+	padding-left: .5rem;
+}
+.question .quesCon ul li:active {
+	border: .04rem solid #c07cff;
+}
+.mainLoge{
+	margin: 1.3rem auto 0;
+	width: 5.7rem;
+
+
+}
+.mainLoge img{
+	display: inline-block;
+	margin-right: .26rem;
+	vertical-align: middle;
+}
+.mainLoge  .img1{
+	width: 2.04rem;
+
+}
+.mainLoge  .img2{
+	width: .2rem;
+
+}
+.mainLoge  .img3{
+	width: 2rem;
+	margin-right: .2rem;
+}
+.mainLoge span {
+	color: #dfdee4;
+	font-size: .24rem;
 }
