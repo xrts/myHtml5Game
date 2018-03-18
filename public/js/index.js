@@ -1,17 +1,16 @@
 var queAndAns = {
     currentQues:0,//记录当前题目序号
     currentGrade:0,//记录当前分数
-    all_data:null,
+    allData:null,
     init: function(){
         this.toMain();
     },
     //跳转到答题页
     toMain : function(){
-        var _this = this;
         $("#start").click(function(){
             $(".start").hide();
             $(".main").show();
-            _this.startTime();
+            queAndAns.startTime();
         });
         this.myData();
         this.timeOver();
@@ -23,13 +22,13 @@ var queAndAns = {
                 labels: false,
                 theme: "flat-colors-black",
                 end: 36,
-                now: 0,
+                now: 0
             });
         });
     },
     //动态写入题目
     inHtml : function(i,data){
-        if(!data.bank[i])return;
+        if(!data.bank[i]) return;
         var issueHtml= data.bank[i].question;
         var itemsHtml="<li>"+data.bank[i].option[0]+"</li><li>"+data.bank[i].option[1]+"</li> <li>"+data.bank[i].option[2]+"</li>" ;
         $("#issue").html(issueHtml);
@@ -43,7 +42,7 @@ var queAndAns = {
         $.getJSON("../data/mydata.json", "", function(data) {
             _this.inHtml(0,data);
             _this.clickOpt(data);
-            _this.all_data = data;
+            _this.allData = data;
         })
     },
     //答题效果样式
@@ -62,16 +61,17 @@ var queAndAns = {
         },200);
     },
     //选择答案
-    clickOpt :function(data){
-        $(".options li").on('click',queAndAns.all_data,this.renderAndBind);
+    clickOpt :function(){
+        $(".options li").on('click',queAndAns.allData,this.renderAndBind);
     },
     //渲染题目并绑定click
     renderAndBind:function(){
-        queAndAns.changeStyle($(this), queAndAns.all_data);
+        $(".options li").unbind('click');
+        queAndAns.changeStyle($(this), queAndAns.allData);
         if (queAndAns.currentQues < 10) {
             setTimeout(function () {
                 $(".quesCon").fadeOut(100, function () {
-                    queAndAns.inHtml(queAndAns.currentQues, queAndAns.all_data);
+                    queAndAns.inHtml(queAndAns.currentQues, queAndAns.allData);
                     $(this).fadeIn(500,function(){
                         $(".options li").on('click', queAndAns.renderAndBind);
                     });
@@ -88,7 +88,7 @@ var queAndAns = {
         var _this = this;
         setTimeout(function(){
             _this.gameOver();
-        },35000)
+        },34000)
     },
     //游戏结束后页面跳转并写入数据
     gameOver :function (){
