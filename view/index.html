@@ -37,29 +37,38 @@
                 </div>
             </div>
         </div>
-        <div class="main hidden"  >
+        <div class="main hidden "  >
             <div class="head ">
                 <div class="headImg">
                     <img src="../public/images/head-img.jpg">
                 </div>
                 <div class="headTitle">
-                    <div>小学</div>
+                    <div id="level">小学生</div>
                     <span>C阶</span>
                 </div>
             </div>
-            <div class="question">
+            <div class="question  ">
                 <div class="quesPage"><span>1</span>/10</div>
                 <div class="quesTime">
-                    <span>32</span>
+                    <div id="countdown18" class="ClassyCountdownDemo"></div>
                 </div>
+                <!--<div class="countdown"></div>-->
                 <div class="quesCon">
-                    <p>我们把“丝绸之路经济带”和“21世纪海上丝绸之路”简称为？</p>
-                    <ul class="options">
-                        <li>一带一路</li>
-                        <li>海上之路</li>
-                        <li>丝绸之路</li>
+                    <p id="issue"></p>
+                    <ul class="options" id="items">
                     </ul>
                 </div>
+            </div>
+            <!--游戏结束页面-->
+            <div class="over  hidden ">
+                <img src="../public/images/overbg.png" alt="">
+                <div class="overCon">
+                    <p>恭喜您~</p>
+                    <p>答对<span id="count"></span>道题~</p>
+                    <p>成功晋级<span id="grade">大学生</span>~</p>
+                </div>
+                <button class="share">分享链接</button>
+
             </div>
             <div class="mainLoge">
                 <img class="img1" src="../public/images/logo.png" alt="">
@@ -68,11 +77,20 @@
                 <span>策划</span>
             </div>
         </div>
-        <div class="over">
 
-        </div>
     </div>
     <script src="../public/js/jquery-3.3.1.min.js"></script>
     <script src="../public/js/index.js"></script>
+    //倒计时圈插件
+    <script src="../public/js/jquery.knob.js"></script>
+    <script src="../public/js/jquery.throttle.js"></script>
+    <script src="../public/js/jquery.classycountdown.js"></script>
+
+
+    <script>
+        queAndAns.init();
+
+
+    </script>
 </body>
 </html>
