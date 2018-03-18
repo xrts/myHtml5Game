@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a3899c7-c6f0-45c7-a88c-2a3fcc395dfb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/data/mydata.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/no.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/overbg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/images/yes.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.classycountdown.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.knob.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.throttle.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/public/js/index.js" afterPath="$PROJECT_DIR$/public/js/index.js" />
-      <change beforePath="$PROJECT_DIR$/view/index.html" afterPath="$PROJECT_DIR$/view/index.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,6 +51,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -88,12 +78,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521356737911</updated>
-      <workItem from="1521356739035" duration="15000" />
+      <workItem from="1521356739035" duration="571000" />
     </task>
+    <task id="LOCAL-00001" summary="no message">
+      <created>1521356913444</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521356913444</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15000" />
+    <option name="totallyTimeSpent" value="571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1045" extended-state="6" />
@@ -122,6 +120,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="no message" />
+    <option name="LAST_COMMIT_MESSAGE" value="no message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
