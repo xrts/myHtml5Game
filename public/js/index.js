@@ -1,9 +1,9 @@
 var queAndAns = {
     currentQues:0,//记录当前题目序号
     currentGrade:0,//记录当前分数
+    all_data:null,
     init: function(){
         this.toMain();
-        this.timeOver();
     },
     //跳转到答题页
     toMain : function(){
@@ -14,6 +14,7 @@ var queAndAns = {
             _this.startTime();
         });
         this.myData();
+        this.timeOver();
     },
     //开启倒计时
     startTime : function(){
@@ -28,22 +29,21 @@ var queAndAns = {
     },
     //动态写入题目
     inHtml : function(i,data){
+        if(!data.bank[i])return;
         var issueHtml= data.bank[i].question;
         var itemsHtml="<li>"+data.bank[i].option[0]+"</li><li>"+data.bank[i].option[1]+"</li> <li>"+data.bank[i].option[2]+"</li>" ;
         $("#issue").html(issueHtml);
         $("#items").html(itemsHtml);
         this.currentQues++;
-    },
-    //初始答题页
-    initHtml : function(data){
-        this.inHtml(0,data);
+        $("#currentNum").html(this.currentQues);
     },
     //请求到json数据
     myData : function(){
         var _this = this;
         $.getJSON("../data/mydata.json", "", function(data) {
-            _this.initHtml(data);
+            _this.inHtml(0,data);
             _this.clickOpt(data);
+            _this.all_data = data;
         })
     },
     //答题效果样式
@@ -59,27 +59,31 @@ var queAndAns = {
             }else {
                 arg.removeClass('current').addClass('no');
             }
-        },300);
+        },200);
     },
-    //选择答案跳转
+    //选择答案
     clickOpt :function(data){
-        var _this = this;
-        $(".options").on('click','li',function(){
-            _this.changeStyle($(this),data);
-            if(_this.currentQues<10){
-                setTimeout(function(){
-                    $(".quesCon").fadeOut('fast',function(){
-                        _this.inHtml(_this.currentQues,data);
-                        $(this).fadeIn('fast');
-                    });
-                },800)
-            }else{
-                setTimeout(function(){
-                     _this.gameOver();
-                },800)
-            }
-        })
+        $(".options li").on('click',queAndAns.all_data,this.renderAndBind);
     },
+    //渲染题目并绑定click
+    renderAndBind:function(){
+        queAndAns.changeStyle($(this), queAndAns.all_data);
+        if (queAndAns.currentQues < 10) {
+            setTimeout(function () {
+                $(".quesCon").fadeOut(100, function () {
+                    queAndAns.inHtml(queAndAns.currentQues, queAndAns.all_data);
+                    $(this).fadeIn(500,function(){
+                        $(".options li").on('click', queAndAns.renderAndBind);
+                    });
+                });
+            }, 200)
+        } else {
+            setTimeout(function () {
+                queAndAns.gameOver();
+            }, 200)
+        }
+    },
+    //计时
     timeOver :function(){
         var _this = this;
         setTimeout(function(){

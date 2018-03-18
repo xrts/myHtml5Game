@@ -15,7 +15,7 @@ body{
 	font-family:'微软雅黑','宋体',Arial, Helvetica, Tahoma, Helvetica;
 	color:#fff;
 	font-size:.16rem;
-	/*background-color:#371a85;*/
+	background-color:#371a85;
 }
 h2 img{display: block;}
 a{text-decoration:none; }
@@ -29,26 +29,18 @@ img{
 .imgBox{
 	text-align: center;
 }
-.absoluteM{
-	position: absolute;
-	left:0;
-	right: 0;
-	margin: auto;
-}
+
 .middle{
 	margin:0 auto;
 }
-.tc_con{
-	overflow: hidden;
-}
-.fl{float: left;}
-.fr{float: right;}
+
 .show {
 	display: block;
 }
 .hidden {
 	display: none;
 }
+
 .content{
 	position: relative;
 	width: 100%;
@@ -62,7 +54,7 @@ img{
 /*开始页*/
 .start{
 	position: relative;
-	height: 13.34rem;
+	/*height: 13.34rem;*/
 
 }
  .head{
@@ -118,7 +110,7 @@ img{
 	margin: .5rem auto 0;
 }
 .startCon{
-	margin : -.2rem auto 0;
+	margin : -1rem auto 0;
 	text-align: center;
 }
 .startCon>span{
@@ -264,27 +256,23 @@ img{
 }
 /*答题结束页面*/
  .over {
-	position: relative;
-	width: 100%;
+	background: url("../images/overbg.png") no-repeat;
+	 background-size: 7.36rem 7.33rem;
+	width: 7.36rem;
+	 height: 7.33rem;
+	 text-align: center;
+
 }
- .over img {
-	width:100% ;
-	margin: .5rem auto 0;
-}
+
  .over .overCon {
-	position: absolute;
-	top: 1.8rem;
-	left: 27%;
+	padding-top: 1.5rem;
 	 font-size: .48rem;
 	 font-weight: bold;
 	 color:#fba537 ;
-	 text-align: center;
-}
+  }
 
  .over .share {
-	 position: absolute;
-	 top: 5.9rem;
-	 left: 1.2rem;
+	 margin: 2.6rem auto 0;
 	 display: block;
 	 width: 4.4rem;
 	 height: 1rem;

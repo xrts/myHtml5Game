@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="content" >
+        <!--开始页面-->
         <div class="start "  >
             <div class="head">
                 <div class="headImg">
@@ -37,6 +38,7 @@
                 </div>
             </div>
         </div>
+        <!--答题于结束页面-->
         <div class="main hidden "  >
             <div class="head ">
                 <div class="headImg">
@@ -47,25 +49,24 @@
                     <span>C阶</span>
                 </div>
             </div>
+            <!--题目显示-->
             <div class="question  ">
-                <div class="quesPage"><span>1</span>/10</div>
+                <div class="quesPage"><span id="currentNum">1</span>/10</div>
                 <div class="quesTime">
                     <div id="countdown18" class="ClassyCountdownDemo"></div>
                 </div>
-                <!--<div class="countdown"></div>-->
                 <div class="quesCon">
                     <p id="issue"></p>
                     <ul class="options" id="items">
                     </ul>
                 </div>
             </div>
-            <!--游戏结束页面-->
+            <!--游戏结束-->
             <div class="over  hidden ">
-                <img src="../public/images/overbg.png" alt="">
                 <div class="overCon">
                     <p>恭喜您~</p>
                     <p>答对<span id="count"></span>道题~</p>
-                    <p>成功晋级<span id="grade">大学生</span>~</p>
+                    <p>成功晋级<span id="grade"></span>~</p>
                 </div>
                 <button class="share">分享链接</button>
 
@@ -81,7 +82,7 @@
     </div>
     <script src="../public/js/jquery-3.3.1.min.js"></script>
     <script src="../public/js/index.js"></script>
-    //倒计时圈插件
+    <!--倒计时圈插件-->
     <script src="../public/js/jquery.knob.js"></script>
     <script src="../public/js/jquery.throttle.js"></script>
     <script src="../public/js/jquery.classycountdown.js"></script>
