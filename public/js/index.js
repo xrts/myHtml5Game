@@ -9,10 +9,11 @@ var queAndAns = {
     toMain : function(){
         $("#start").click(function(){
             $(".start").hide();
+
             $(".main").fadeIn('fast',function(){
-                queAndAns.startTime();
                 queAndAns.myData();
                 queAndAns.timeOver();
+                queAndAns.startTime();
             });
 
         });
@@ -77,7 +78,7 @@ var queAndAns = {
                         $(".options li").on('click', queAndAns.renderAndBind);
                     });
                 });
-            }, 200)
+            }, 300)
         } else {
             setTimeout(function () {
                 queAndAns.gameOver();
