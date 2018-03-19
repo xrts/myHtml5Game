@@ -1,7 +1,7 @@
 var queAndAns = {
     currentQues:0,//记录当前题目序号
     currentGrade:0,//记录当前分数
-    allData:null,
+    allData:null,//题库
     init: function(){
         this.toMain();
     },
@@ -9,22 +9,23 @@ var queAndAns = {
     toMain : function(){
         $("#start").click(function(){
             $(".start").hide();
-            $(".main").show();
-            queAndAns.startTime();
+            $(".main").fadeIn('fast',function(){
+                queAndAns.startTime();
+                queAndAns.myData();
+                queAndAns.timeOver();
+            });
+
         });
-        this.myData();
-        this.timeOver();
     },
     //开启倒计时
     startTime : function(){
-        $(document).ready(function() {
-            $('#countdown18').ClassyCountdown({
-                labels: false,
-                theme: "flat-colors-black",
-                end: 36,
-                now: 0
-            });
+        $('#countdown18').ClassyCountdown({
+            labels: false,
+            theme: "flat-colors-black",
+            end: 36,
+            now: 0
         });
+
     },
     //动态写入题目
     inHtml : function(i,data){
@@ -88,7 +89,7 @@ var queAndAns = {
         var _this = this;
         setTimeout(function(){
             _this.gameOver();
-        },34000)
+        },35000)
     },
     //游戏结束后页面跳转并写入数据
     gameOver :function (){

@@ -40,6 +40,7 @@
                 }
             },
             onEndCallback: function() {
+
             }
         };
         if (options.theme) {

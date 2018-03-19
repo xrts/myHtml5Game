@@ -188,6 +188,9 @@ img{
 .question .quesPage span{
 	color: #a168b2;
 }
+.question .quesTime {
+	overflow: hidden;
+}
 
 .question .quesCon {
 	font-size: .30rem;
@@ -289,13 +292,16 @@ img{
 	max-width: 300px;
 	width:calc(100%);
 	display:block;
-	margin-left: 40%;
+	margin-left: 35%;
 }
 
 .ClassyCountdown-wrapper > div {
 	display: inline-block;
 	position: relative;
 	width: calc(25% - 20px);
+}
+.ClassyCountdown-wrapper {
+	width: 300px;
 }
 
 .ClassyCountdown-wrapper .ClassyCountdown-value {
