@@ -8,8 +8,25 @@
     <script>
         document.getElementsByTagName('html')[0].style.fontSize=window.screen.width/7.5+'px';
     </script>
+    <script src="../public/js/jquery-3.3.1.min.js"></script>
+    <script src="../public/js/index.js"></script>
+    <!--倒计时圈插件-->
+    <script src="../public/js/jquery.knob.js"></script>
+    <script src="../public/js/jquery.throttle.js"></script>
+    <script src="../public/js/jquery.classycountdown.js"></script>
 </head>
 <body>
+    <!-- loading -->
+    <div class="loading">
+        <div class="loader">
+            <div class="ball-triangle-path">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
     <div class="content" >
         <!--开始页面-->
         <div class="start "  >
@@ -34,11 +51,56 @@
                 <button id="start">开始答题</button>
                 <div class="rules">
                     <img src="../public/images/book.png" alt="">
-                    <span>规则与奖品</span>
+                    <span >规则与奖品</span>
                 </div>
             </div>
+            <!--游戏规则页-->
+            <div class="award">
+                <div class="award_container abM">
+                    <ul class="abM">
+                        <li>
+                            <dl>
+                                <dt>一、活动时间：2018年3月16日-2018年3月18日</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>二、参与方式</dt>
+                                <dd>1、用户首次进入游戏，点击“开始答题”每个用户默认有一次答题机会，机会用完后，可分享再获得。</dd>
+                                <dd>2、活动期间，每人每天均有3次答题、3次抽奖机会。答题分数超过60分，即可参与抽奖。</dd>
+                                <dd>3、每次答题，限时100秒，共10道题。</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>三、奖品领取方式：</dt>
+                                <dd>1、每个用户活动结束后，凭借中奖手机号到谦祥福晟兴隆城售楼中心（兴隆铺路与沙口路交叉口东南角）领取。</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>四、奖品信息</dt>
+                                <dd>特等奖：欧洲五国夏令营</dd>
+                                <dd>一等奖：步步高家教学习机</dd>
+                                <dd>二等奖：双轮平衡车</dd>
+                                <dd>三等奖：迪士尼文具套盒</dd>
+                                <dd>幸运奖：碗具礼盒</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>五、其他补充说明</dt>
+                                <dd>1、活动过程中，凡是以不正当手段（作弊、恶意方式、扰乱系统、网络攻击等）参与本次活动的用户，凤凰网房产有权终止并取消获奖资格。</dd>
+                                <dd>2、如遇到不可抗拒力（包括但不限于重大灾难事件、活动受政府机关指令停止举办或者调整的、活动中存在大面积作弊行为、活动受到严重的网络攻击或者系统故障导致活动中奖名单大批出错，活动不能正常进行的）凤凰网房产有权取消、修改或暂停本活动。</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <a class="clsBtn abM" href="javascript:;"></a>
+            </div>
+
         </div>
-        <!--答题于结束页面-->
+        <!--答题与结束页面-->
         <div class="main hidden "  >
             <div class="head ">
                 <div class="headImg">
@@ -61,37 +123,45 @@
                     </ul>
                 </div>
             </div>
-            <!--游戏结束-->
-            <div class="over  hidden ">
-                <div class="overCon">
-                    <p>恭喜您~</p>
-                    <p>答对<span id="count"></span>道题~</p>
-                    <p>成功晋级<span id="grade"></span>~</p>
-                </div>
-                <button class="share">分享链接</button>
-
-            </div>
-            <div class="mainLoge">
+            <div class="mainLoge abM">
                 <img class="img1" src="../public/images/logo.png" alt="">
                 <img class="img2" src="../public/images/x.png" alt="">
                 <img class="img3" src="../public/images/ifeng.png" alt="">
                 <span>策划</span>
             </div>
+            <!--游戏结束-->
+            <div class="scores abM">
+                <h1 ><span id="count">90</span><small>分</small></h1>
+                <h2 id="grade">大学生</h2>
+                <p id="comments">恭喜你成功晋级“天之骄子!</p>
+                <img class="bestAd" src="http://s0.ifengimg.com/2018/03/12/bestAd_2a9aa284.png" alt="">
+                <button type="button" class="toAwd">分享再玩一次</button>
+            </div>
+
+
+        </div>
+        <!--分享页面-->
+        <div class="shareC">
+            <img src="http://s0.ifengimg.com/2018/03/12/share_726184f3.png" alt="">
         </div>
 
     </div>
-    <script src="../public/js/jquery-3.3.1.min.js"></script>
-    <script src="../public/js/index.js"></script>
-    <!--倒计时圈插件-->
-    <script src="../public/js/jquery.knob.js"></script>
-    <script src="../public/js/jquery.throttle.js"></script>
-    <script src="../public/js/jquery.classycountdown.js"></script>
+    <!-- 抽奖状态 -->
+    <input class="awardSt" type="text" value="0">
+    <!--分享状态 -->
+    <input class="sharedSt" type="text" value="0">
+    <!-- 挑战次数 -->
+    <input class="challengeSt" type="text" value="0">
 
 
     <script>
-        queAndAns.init();
-
-
+        document.onreadystatechange = function() {
+            if (document.readyState == 'complete') {
+                // 等待加载
+                $('.loading').fadeOut();
+                queAndAns.init();
+            }
+        }
     </script>
 </body>
 </html>

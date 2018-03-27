@@ -7,11 +7,17 @@ var queAndAns = {
     },
     //跳转到答题页
     toMain : function(){
+        $('.rules').click(function(){
+            $('.award').fadeIn();
+        });
+        $('.clsBtn').click(function(){
+            $('.award').fadeOut();
+        });
         $("#start").click(function(){
+            queAndAns.myData();
             $(".start").hide();
-
             $(".main").fadeIn('fast',function(){
-                queAndAns.myData();
+
                 queAndAns.timeOver();
                 queAndAns.startTime();
             });
@@ -92,24 +98,33 @@ var queAndAns = {
             _this.gameOver();
         },35000)
     },
-    //游戏结束后页面跳转并写入数据
+    //游戏结束后页面跳转并写入数据、分享
     gameOver :function (){
         $(".question").hide();
-        $(".over").show();
+        $(".head").hide();
+        $(".scores").fadeIn();
         $("#count").html(this.currentGrade);
-        $("#grade").html(this.level());
-        $("#level").html(this.level());
+        $("#grade").html(this.level().level);
+        $("#level").html(this.level().level);
+        $("#comments").html(this.level().comments);
+        //分享页
+        $('.toAwd').click(function(){
+            $('.shareC').show();
+        });
+        $('.shareC').click(function(){
+            $(this).fadeOut();
+        });
     },
     //获得等级判断
     level : function(){
         if(this.currentGrade<4){
-            return "小学生";
+            return {level:'幼儿园小班',comments:'骚年，这个分数还敢回家？早被老爸打成屁股开花。'};
         }else if(this.currentGrade<6){
-            return "初中生";
+            return {level:'小学一年级',comments:'你离大学还有10年的距离'};
         }else if(this.currentGrade<8){
-            return "高中生";
+            return {level:'高中生',comments:'可惜，就差0.01分，你就实现人生巅峰'};
         }else{
-            return "大学生";
+            return {level:'大学生',comments:'恭喜你成功晋级“天之骄子”'};
         }
     }
 
