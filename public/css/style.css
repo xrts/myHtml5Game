@@ -626,3 +626,12 @@ img{
 	display: block;
 }
 
+.awardSt, .challengeSt, .sharedSt {
+    display: none;
+}
+
+.challengeStEd {
+    color: #fff;
+    background-color: #bbbbbb;
+}
+
