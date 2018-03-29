@@ -47,7 +47,7 @@ var queAndAns = {
     //请求到json数据
     myData : function(){
         var _this = this;
-        $.getJSON("../data/mydata.json", "", function(data) {
+        $.getJSON("data/mydata.json", "", function(data) {
             _this.inHtml(0,data);
             _this.clickOpt(data);
             _this.allData = data;
